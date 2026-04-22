@@ -12,12 +12,17 @@
  *   - returns <0 if right turn,
  *   - returns ==0 if collinear.
  */
-std::int64_t turn(std::array<std::int64_t, 2> p1,
-                  std::array<std::int64_t, 2> p2,
-                  std::array<std::int64_t, 2> p3) 
+// std::int64_t turn(std::array<std::int64_t, 2> p1,
+//                   std::array<std::int64_t, 2> p2,
+//                   std::array<std::int64_t, 2> p3) 
+// {
+    // return (p2[0] - p1[0]) * (p3[1] - p1[1]) - 
+    //        (p2[1] - p1[1]) * (p3[0] - p1[0]);
+// }
+std::int64_t turn(std::int64_t p1_0, std::int64_t p1_1, std::int64_t p2_0, std::int64_t p2_1, std::int64_t p3_0, std::int64_t p3_1)
 {
-    return (p2[0] - p1[0]) * (p3[1] - p1[1]) - 
-           (p2[1] - p1[1]) * (p3[0] - p1[0]);
+    return (p2_0 - p1_0) * (p3_1 - p1_1) - 
+           (p2_1 - p1_1) * (p3_0 - p1_0);
 }
 
 /**
@@ -67,9 +72,14 @@ double problematic_function(const std::vector<std::size_t>& a,
             }
             std::int64_t a_i = a[ax];
             std::int64_t b_j = b[j];
-            auto t1 = turn({x, y}, {a_i, b_j}, {b_j, a_i});
+            // auto t1 = turn({x, y}, {a_i, b_j}, {b_j, a_i});
+            auto t1 = turn(x, y, a_i, b_j, b_j, a_i);
+            
             if(t1 >= 0) {
-                auto t2 = turn({x, y}, {-b_j, -a_i}, {-a_i, -b_j});
+                // auto t2 = turn({x, y}, {-b_j, -a_i}, {-a_i, -b_j});
+                auto t2 = turn(x, y, -b_j, -a_i, -a_i, -b_j);
+
+                
                 if(t2 >= 0) {
                     result += c[(a_i + b_j) % m] * (t1 + t2 + 1);
                 }

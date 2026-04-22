@@ -1,0 +1,21 @@
+Result: 1.96551e+09
+Elapsed time: 49.0614 seconds
+
+ Performance counter stats for './build/problem_program_a 32768':
+
+                 0      context-switches:u               #      0.0 cs/sec  cs_per_second     
+                 0      cpu-migrations:u                 #      0.0 migrations/sec  migrations_per_second
+            77,985      page-faults:u                    #    286.7 faults/sec  page_faults_per_second
+        272,021.55 msec task-clock:u                     #      1.0 CPUs  CPUs_utilized       
+       544,523,549      branch-misses:u                  #      0.3 %  branch_miss_rate         (50.00%)
+   204,283,052,165      branches:u                       #    751.0 M/sec  branch_frequency     (66.67%)
+ 1,072,261,499,696      cpu-cycles:u                     #      3.9 GHz  cycles_frequency       (66.67%)
+ 1,322,448,508,287      instructions:u                   #      1.2 instructions  insn_per_cycle  (66.67%)
+   226,756,312,560      stalled-cycles-frontend:u        #     0.21 frontend_cycles_idle        (66.67%)
+
+     272.060150478 seconds time elapsed
+
+     269.253827000 seconds user
+       0.573052000 seconds sys
+
+
