@@ -1,0 +1,112 @@
+Results for every graph\n
+graph1.json
+Clique with 3 vertices!
+	443
+	479
+	691
+Found in 1.64384 seconds.
+graph2.json
+Clique with 4 vertices!
+	857
+	161
+	458
+	216
+Found in 1.81401 seconds.
+graph3.json
+Clique with 5 vertices!
+	488
+	789
+	519
+	755
+	419
+Found in 2.47142 seconds.
+graph4.json
+Clique with 6 vertices!
+	172
+	971
+	423
+	234
+	438
+	663
+Found in 3.11976 seconds.
+graph5.json
+Clique with 8 vertices!
+	897
+	676
+	341
+	114
+	863
+	282
+	40
+	131
+Found in 4.75434 seconds.
+graph6.json
+Clique with 11 vertices!
+	778
+	692
+	906
+	798
+	168
+	580
+	284
+	892
+	840
+	214
+	47
+Found in 8.56676 seconds.
+graph7.json
+Clique with 14 vertices!
+	812
+	386
+	664
+	687
+	897
+	563
+	990
+	334
+	152
+	185
+	999
+	639
+	449
+	769
+Found in 11.1183 seconds.
+graph8.json
+Clique with 26 vertices!
+	724
+	828
+	633
+	129
+	458
+	971
+	868
+	769
+	716
+	684
+	227
+	774
+	369
+	939
+	945
+	668
+	234
+	146
+	522
+	844
+	167
+	725
+	186
+	428
+	103
+	721
+Found in 23.0831 seconds.
+graph9.json
+Clique with 7 vertices!
+	23
+	1242
+	6072
+	3118
+	5031
+	283
+	8030
+Found in 31.5076 seconds.

@@ -1,0 +1,13 @@
+# 2a)
+
+We looked at `perf record` and noticed that the turn function was taking the most time and had alot of branch misses.
+Using ghidra, we saw that the operator[] on std::array hadn't been optimized out yet. This could be improved by
+singling out the variables from three arrays to six single-value parameters. This allows the compiler to tell the
+CPU to cache these variables properly, allowing for faster re-use of the data.
+
+We exported two files: `before_optimization.txt` and `after_optimization.txt` where the results of our optimization attempt is shown.
+
+# 2b)
+
+We programmed perf_graph.sh which can be executed in bash. Executing `./perf_graphs.sh ./before_opt.txt` shows us a cache miss rate of up to 1.4%.
+
