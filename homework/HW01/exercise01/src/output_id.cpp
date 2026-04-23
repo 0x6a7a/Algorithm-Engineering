@@ -14,6 +14,7 @@
 #include <cstring>
 #include <unistd.h>
 #include <ctime>
+#include <bit>
 
 using RawHash = std::array<std::byte, 16>;
 using HexHash = std::array<char, 33>;

@@ -1,5 +1,5 @@
 import math
-
+import time
 
 def _dist(points, a, b):
     dx = points[a][0] - points[b][0]
@@ -28,4 +28,31 @@ def first_improvement_two_opt(
     # TODO: Implement Variant 1 (first-improvement with restart).
     # Respect ``timeout``: compute ``deadline = time.perf_counter() + timeout``
     # and break out of the outer loop once the deadline is reached.
-    raise NotImplementedError
+    improved = True
+    n = len(points)
+    start = time.perf_counter()
+    #print("##########################################################################")
+    #print(initial_tour)
+    
+    while improved:
+
+        if time.perf_counter() - start >= 10.0:
+            break
+        
+        improved = False
+        for i in range(0, n-2):
+            for j in range(i+2, n-1):
+                if i==0 and j == n-1:
+                    continue
+                delta = _dist(points, initial_tour[i], initial_tour[j]) + _dist(points, initial_tour[i+1], initial_tour[j+1]) - _dist(points, initial_tour[i], initial_tour[i+1]) - _dist(points, initial_tour[j], initial_tour[j+1])
+                if delta < 0:
+                    #reverse list
+                    initial_tour[i+1:j+1] = initial_tour[i+1:j+1][::-1]
+                    improved = True
+                    break 
+            else:
+                continue
+            break
+    #print("##########################################################################")
+    #print(initial_tour)
+    return initial_tour
