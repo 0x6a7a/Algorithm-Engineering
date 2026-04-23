@@ -34,8 +34,7 @@ def best_improvement_two_opt(
     #print("##########################################################################")
     #print(initial_tour)
     
-    i_diff = -1
-    while i_diff < 0:
+    while True:
 
         if time.perf_counter() - start >= 10.0:
             break
@@ -46,18 +45,22 @@ def best_improvement_two_opt(
         
         for i in range(0, n-2):
             for j in range(i+2, n-1):
+                
                 if i==0 and j == n-1:
                     continue
+                
                 delta = _dist(points, initial_tour[i], initial_tour[j]) + _dist(points, initial_tour[i+1], initial_tour[j+1]) - _dist(points, initial_tour[i], initial_tour[i+1]) - _dist(points, initial_tour[j], initial_tour[j+1])
                 if delta < delta_diff:
                     delta_diff = delta
                     i_diff = i
                     j_diff = j
-            
+            #print(i_diff)
             if i_diff >= 0:
                 #reverse list
-                initial_tour[i+1:j+1] = initial_tour[i+1:j+1][::-1]
+                initial_tour[i_diff+1:j_diff+1] = initial_tour[i_diff+1:j_diff+1][::-1]
                 
     #print("##########################################################################")
     #print(initial_tour)
+        if i_diff < 0:
+            break
     return initial_tour
